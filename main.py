@@ -274,4 +274,18 @@ def enrich_company(data: EnrichCompanyRequest):
             "linkedin_url": "",
             "source": "lusha",
             "error": str(e)
-        }
+        }@app.get("/privacy", response_class=HTMLResponse)
+def privacy():
+    return """
+    <html>
+      <head><title>Privacy Policy</title></head>
+      <body style="font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6;">
+        <h1>Privacy Policy</h1>
+        <p>This GPT processes user inputs to provide recruiting and business development insights.</p>
+        <p>Data may be sent to third-party services used by this tool, including Lusha and Perplexity, in order to return contact enrichment and company research results.</p>
+        <p>No API keys are exposed to end users.</p>
+        <p>No user data is intentionally sold or shared outside the services required to power the tool.</p>
+        <p>If you have questions, contact: Aaron.Tague@wenhamcarter.com</p>
+      </body>
+    </html>
+    """
